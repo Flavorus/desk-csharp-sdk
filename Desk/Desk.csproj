@@ -60,7 +60,6 @@
     <Compile Include="ICompanyMapper.cs" />
     <Compile Include="IDeskApi.cs" />
     <Compile Include="IDeskApiMapper.cs" />
-    <Compile Include="MZBasicAuthenticator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Request\GetTopicsParameters.cs" />
     <Compile Include="Request\ParametersBase.cs" />

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using Desk.Entities;
 using Desk.Response;
 using Newtonsoft.Json;
@@ -34,13 +30,6 @@ namespace Desk
 
         public Company Create(string name, IEnumerable<string> domains, Dictionary<string, string> customFields)
         {
-            //Not the place for this code, but will do temporarily.
-            var restClient = new RestClient()
-            {
-                BaseUrl = "https://assetbook1.desk.com/api/v2",
-                Authenticator = new HttpBasicAuthenticator("miguel@zakharia.me", "da5yHaRq9Bk4rpl")
-            };
-
             var request = new RestRequest()
             {
                 Resource = "companies",
@@ -60,19 +49,38 @@ namespace Desk
                 })
             });
 
-            var response = restClient.Execute(request);
+            var response = _api.Call(request);
 
             return new Company(response.Content);
         }
 
         private IRestResponse List(int page = 1, int perPage = 50)
         {
-            return _api.Call(string.Format("companies?page={0}&per_page={1}", page, perPage), Method.GET);
+            var request = new RestRequest()
+            {
+                Resource = "companies?page={page}&per_page={per_page}",
+                Method = Method.GET,
+                RequestFormat = DataFormat.Json
+            };
+
+            request.AddUrlSegment("page", page.ToString());
+            request.AddUrlSegment("per_page", perPage.ToString());
+
+            return _api.Call(request);
         }
 
         private IRestResponse Show(int companyId)
         {
-            return _api.Call("companies/" + companyId, Method.GET);
+            var request = new RestRequest()
+            {
+                Resource = "companies/{id}",
+                Method = Method.GET,
+                RequestFormat = DataFormat.Json
+            };
+
+            request.AddUrlSegment("id", companyId.ToString());
+
+            return _api.Call(request);
         }
     }
 }

@@ -63,6 +63,12 @@ namespace Desk
             return client.Execute(request);
         }
 
+        public IRestResponse Call(IRestRequest request)
+        {
+            var client = GetClient();
+            return client.Execute(request);
+        }
+
         private RestClient GetClient()
         {
             var client = new RestClient();
