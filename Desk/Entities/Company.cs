@@ -13,7 +13,6 @@ namespace Desk.Entities
     /// requesting companies from the desk.com API.
     /// </summary>
     /// <remarks>
-    /// Author:     Miguel Zakharia [miguel@zakharia.me]
     /// Link:       http://github.com/danielsaidi/desk-csharp-sdk
     /// </remarks>
     public class Company : EntityBase
@@ -28,7 +27,7 @@ namespace Desk.Entities
 
         public DateTime UpdatedAt { get; set; }
 
-        public IDictionary<string, string> CustomFields { get; set; }
+        public Dictionary<string, string> CustomFields { get; set; }
 
         public Company() { }
 
@@ -44,18 +43,6 @@ namespace Desk.Entities
                 UpdatedAt = DateTime.Parse(deserialized["updated_at"].ToString());
                 CustomFields = ((JObject) deserialized["custom_fields"]).ToObject<Dictionary<string, string>>();
             }
-        }
-
-        //Was not successful in using GetDynamicProperty because of issues with JArray not converting properly to List.
-        private Company(object propertyContainer)
-            : base(propertyContainer)
-        {
-            Id = GetDynamicProperty<int>("id");
-            Name = GetDynamicProperty<string>("name");
-            Domains = GetDynamicProperty<string[]>("domains");
-            CreatedAt = GetDynamicProperty<DateTime>("created_at");
-            UpdatedAt = GetDynamicProperty<DateTime>("updated_at");
-            //CustomFields = GetDynamicProperty<NameValueCollection>("custom_fields");
         }
     }
 }
