@@ -1,4 +1,5 @@
-﻿using Desk.Entities;
+﻿using System.Collections.Generic;
+using Desk.Entities;
 using Desk.Response;
 
 namespace Desk
@@ -7,5 +8,6 @@ namespace Desk
     {
         ListResponse<Company> All(int page = 1, int perPage = 50);
         Company Get(int companyId);
+        Company Create(string name, IEnumerable<string> domains, Dictionary<string, string> customFields);
     }
 }

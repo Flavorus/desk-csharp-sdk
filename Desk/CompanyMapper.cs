@@ -17,14 +17,34 @@ namespace Desk
 
         public ListResponse<Company> All(int page = 1, int perPage = 50)
         {
-            return new ListResponse<Company>(List(page, perPage));
+            var request = new RestRequest()
+            {
+                Resource = "companies?page={page}&per_page={per_page}",
+                Method = Method.GET,
+                RequestFormat = DataFormat.Json
+            };
+
+            request.AddUrlSegment("page", page.ToString());
+            request.AddUrlSegment("per_page", perPage.ToString());
+            var response = _api.Call(request);
+
+            return new ListResponse<Company>(response);
         }
 
         public Company Get(int companyId)
         {
             if (companyId < 1) { return null; }
 
-            var response = Show(companyId);
+            var request = new RestRequest()
+            {
+                Resource = "companies/{id}",
+                Method = Method.GET,
+                RequestFormat = DataFormat.Json
+            };
+
+            request.AddUrlSegment("id", companyId.ToString());
+            var response = _api.Call(request);
+
             return new Company(response.Content);
         }
 
@@ -52,35 +72,6 @@ namespace Desk
             var response = _api.Call(request);
 
             return new Company(response.Content);
-        }
-
-        private IRestResponse List(int page = 1, int perPage = 50)
-        {
-            var request = new RestRequest()
-            {
-                Resource = "companies?page={page}&per_page={per_page}",
-                Method = Method.GET,
-                RequestFormat = DataFormat.Json
-            };
-
-            request.AddUrlSegment("page", page.ToString());
-            request.AddUrlSegment("per_page", perPage.ToString());
-
-            return _api.Call(request);
-        }
-
-        private IRestResponse Show(int companyId)
-        {
-            var request = new RestRequest()
-            {
-                Resource = "companies/{id}",
-                Method = Method.GET,
-                RequestFormat = DataFormat.Json
-            };
-
-            request.AddUrlSegment("id", companyId.ToString());
-
-            return _api.Call(request);
         }
     }
 }

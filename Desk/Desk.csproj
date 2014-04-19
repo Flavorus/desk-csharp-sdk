@@ -65,6 +65,7 @@
     <Compile Include="Request\ParametersBase.cs" />
     <Compile Include="Response\GetTopicsResponse.cs" />
     <Compile Include="Response\ListResponse.cs" />
+    <Compile Include="TestData\CompanyTestData.cs" />
     <Compile Include="TestData\TopicTestData.cs" />
     <Compile Include="TestData\GetTopicsResponseTestData.cs" />
   </ItemGroup>
