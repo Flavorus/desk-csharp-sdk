@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Desk.Entities;
 using Desk.Response;
 using Newtonsoft.Json;
@@ -64,7 +65,7 @@ namespace Desk
                 Value = JsonConvert.SerializeObject(new
                 {
                     name,
-                    domains,
+                    domains = CleanDomains(domains),
                     custom_fields = customFields
                 })
             });
@@ -72,6 +73,39 @@ namespace Desk
             var response = _api.Call(request);
 
             return new Company(response.Content);
+        }
+
+        public Company Update(int companyId, string name, IEnumerable<string> domains, Dictionary<string, string> customFields)
+        {
+            var request = new RestRequest()
+            {
+                Resource = "companies/{id}",
+                Method = Method.PATCH,
+                RequestFormat = DataFormat.Json
+            };
+
+            request.AddUrlSegment("id", companyId.ToString());
+
+            request.AddParameter(new Parameter()
+            {
+                Name = "",
+                Type = ParameterType.RequestBody,
+                Value = JsonConvert.SerializeObject(new
+                {
+                    name,
+                    domains = CleanDomains(domains),
+                    custom_fields = customFields
+                })
+            });
+
+            var response = _api.Call(request);
+
+            return new Company(response.Content);
+        }
+
+        private IEnumerable<string> CleanDomains(IEnumerable<string> domains)
+        {
+            return domains == null ? null : domains.Select(domain => domain.Trim().Replace("@", "").ToLower());
         }
     }
 }
