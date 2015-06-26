@@ -61,7 +61,7 @@ For more info about this project and other things that I'm working on:
 	Project site:	http://github.com/danielsaidi/desk-csharp-sdk
 	NuGet package:	http://nuget.org/packages/desk
 	Blog:			http://danielsaidi.wordpress.com
-	Twitter:		@danielsaidi
+	Twitter:		http://twitter.com/danielsaidi
 	
 Contributions to this project are more than welcome. If you build the
 next great feature, fix a bug, improve a unit test etc., just send me
