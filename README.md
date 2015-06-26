@@ -15,20 +15,6 @@ what you miss should be a breeze. Just have a look at the things that
 already exists, and follow the same patten.
 
 
-Resources
----------
-
-For more info about this project and other things that I'm working on:
-
-	Project:		http://github.com/danielsaidi/desk-csharp-sdk
-	NuGet package:	http://nuget.org/packages/desk
-	Blog:			http://danielsaidi.wordpress.com
-	Twitter:		@danielsaidi
-	
-Contributions to this project are more than welcome. If you build the
-next great feature, fix a bug, improve a unit test etc., just send me
-a pull request or get in touch.
-
 
 Getting started
 ---------------
@@ -66,60 +52,17 @@ The DeskApiMapper is really convenient, but until all API methods are
 mapped, you will need the DeskApi class as well.
 
 
-Mapped API resources
---------------------
 
-Content resources
- - topics 
+Contact
+-------
 
+For more info about this project and other things that I'm working on:
 
-
-Unmapped API resources (todo)
------------------------------
-
-Case resources
- - cases 
- - cases/show 
- - case/update 
-
-Customer resources
- - customers 
- - customers/show 
- - customers/create 
- - customers/update 
- - customers/emails/create 
- - customers/emails/update 
- - customers/phones/create 
- - customers/phones/update 
-
-Interaction resources
- - interactions 
- - interaction/create 
-
-User resources
- - groups 
- - groups/show 
- - users 
- - users/show 
-
-Content resources
- - topics/show 
- - topics/create 
- - topics/update 
- - topics/destroy 
- - topics/articles 
- - topics/articles/create 
- - articles/show 
- - articles/update 
- - articles/destroy 
-
-Macro resources
- - macros 
- - macros/create 
- - macros/show 
- - macros/update 
- - macros/destroy 
- - macros/actions 
- - macros/actions/show 
- - macros/actions/update 
-
+	Project:		http://github.com/danielsaidi/desk-csharp-sdk
+	NuGet package:	http://nuget.org/packages/desk
+	Blog:			http://danielsaidi.wordpress.com
+	Twitter:		@danielsaidi
+	
+Contributions to this project are more than welcome. If you build the
+next great feature, fix a bug, improve a unit test etc., just send me
+a pull request or get in touch.
