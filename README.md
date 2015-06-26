@@ -22,13 +22,14 @@ Web resources
 
 You can find more information about the SDK at the following places:
 
-	Project site:	http://github.com/danielsaidi/desk-csharp-sdk
-	Downloads:		http://github.com/danielsaidi/desk-csharp-sdk/tags
-	Issues:			http://github.com/danielsaidi/desk-csharp-sdk/issues
+	Project:		http://github.com/danielsaidi/desk-csharp-sdk
 	NuGet package:	http://nuget.org/packages/desk
-
-Do not hesitate to contact me if you have any questions. To report an
-issue or a bug, use the issue page or send me an e-mail.
+	Blog:			http://danielsaidi.wordpress.com
+	Twitter:		@danielsaidi
+	
+Contributions to this project are more than welcome. If you build the
+next great feature, fix a bug, improve a unit test etc., just send me
+a pull request or get in touch.
 
 
 Getting started
@@ -123,25 +124,4 @@ Macro resources
  - macros/actions 
  - macros/actions/show 
  - macros/actions/update 
-
-
-Contributions
--------------
-
-Contributions to the library are more than welcome. Just send me pull
-requests via GitHub or attach your code in an e-mail.
-
-
-License
--------
-
-The Desk.com C# SDK is released under the MIT License, which lets you
-do much about anything you want with it. Read more here:
-
-http://www.opensource.org/licenses/mit-license.php
-
-The license basically means that, if you use this SDK and also happen
-to like it, please spread the word. Furthermore, do not steawl credit
-for other's work. If you extract anything out of the project, let the
-author information remain in the source code.
 
