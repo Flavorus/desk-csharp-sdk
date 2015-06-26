@@ -18,7 +18,7 @@ already exists, and follow the same patten.
 Resources
 ---------
 
-You can find more information about the SDK at the following places:
+For more info about this project and other things that I'm working on:
 
 	Project:		http://github.com/danielsaidi/desk-csharp-sdk
 	NuGet package:	http://nuget.org/packages/desk
