@@ -58,7 +58,7 @@ Contact
 
 For more info about this project and other things that I'm working on:
 
-	Project:		http://github.com/danielsaidi/desk-csharp-sdk
+	Project site:	http://github.com/danielsaidi/desk-csharp-sdk
 	NuGet package:	http://nuget.org/packages/desk
 	Blog:			http://danielsaidi.wordpress.com
 	Twitter:		@danielsaidi
