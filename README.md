@@ -1,8 +1,6 @@
 Desk.com C# SDK
 ===============
 
-	Author:		Daniel Saidi [daniel.saidi@gmail.com]
-
 The Desk.com C# SDK is a work in progress (really, nothing more). The
 solution contains classes that helps you connect to and work with the
 desk.com API.
@@ -17,8 +15,8 @@ what you miss should be a breeze. Just have a look at the things that
 already exists, and follow the same patten.
 
 
-Web resources
--------------
+Resources
+---------
 
 You can find more information about the SDK at the following places:
 
@@ -36,8 +34,8 @@ Getting started
 ---------------
 
 To get started with SDK, either grab the source code from the project
-page, grab a public release from the download section or simply add a
-reference to the library directly from Visual Studio, using NuGet.
+site, download a zip from the release section or add a reference from
+within Visual Studio, using NuGet.
 
 Once you have a reference in place, you can create a DeskApi instance,
 using the base url to your desk.com app's API, the key and the secret
